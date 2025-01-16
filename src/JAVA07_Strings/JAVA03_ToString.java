@@ -1,4 +1,4 @@
-package JAVA06_Strings;
+package JAVA07_Strings;
 
 public class JAVA03_ToString {
     public static void main(String[] args) {

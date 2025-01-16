@@ -1,0 +1,12 @@
+HOW TO SOLVE A PATTERN -
+
+1) Outer Loop
+no. of lines = no. of rows = no. of times outer loop will run
+
+2) Inner Loop
+Identify for every Row no.,
+* how many columns are there
+* types of elements in the column
+
+3) What to print
+See what is asked and use logic for some number patterns

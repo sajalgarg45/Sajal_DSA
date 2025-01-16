@@ -1,4 +1,4 @@
-package JAVA06_Strings;
+package JAVA07_Strings;
 
 /*
 Strings is the class of JAVA
