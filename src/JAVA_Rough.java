@@ -1,22 +1,23 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class JAVA_Rough {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        primeFactor(n,2);
+        int a = sc.nextInt(); 
+        int b = evenDigits(a);
+        System.out.println(b);
     }
-    public static void primeFactor(int n, int divisor){
-        if(n==1){
-            return;
+    public static int evenDigits(int n){
+        if (n == 0) {
+            return 0;
         }
-        else if (n % divisor == 0) {
-            System.out.println(divisor);
-            primeFactor(n / divisor, divisor);
-        } else {
-            primeFactor(n, divisor + 1);
+        int lastDigits = n%10;
+        if(lastDigits%2==0){
+            return evenDigits(n/10)*10+lastDigits;
+        }
+        else{
+            return evenDigits(n/10);
         }
     }
 }

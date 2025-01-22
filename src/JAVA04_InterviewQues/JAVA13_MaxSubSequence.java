@@ -5,7 +5,7 @@ public class JAVA13_MaxSubSequence {
         int[] arr = {2,3,4,5,-10};
 //        int a = maxSubArraySum1(arr);
 //        int a = maxSubArraySum2(arr);
-        int a = maxSubArraySum3(arr);
+        int a = maxSubArraySum4(arr);
         System.out.println(a);
 
     }
@@ -48,20 +48,31 @@ public class JAVA13_MaxSubSequence {
 
     // Method 3 -> O(n)
 
-    public static int maxSubArraySum3(int[] arr) {
-        int max = 0;
-        int sum = 0;
-        int i = 0;
-        for (int j = 0; j < arr.length; j++) {
-            if (sum < 0) {
-                i = j;
-                sum = 0;
-            }
-            sum += arr[j];
-            if (sum > max)
-                max = sum;
-        }
-        return max;
-    }
+//    public static int maxSubArraySum3(int[] arr) {
+//        int max = 0;
+//        int sum = 0;
+//        int i = 0;
+//        for (int j = 0; j < arr.length; j++) {
+//            if (sum < 0) {
+//                i = j;
+//                sum = 0;
+//            }
+//            sum += arr[j];
+//            if (sum > max)
+//                max = sum;
+//        }
+//        return max;
+//    }
 
+    // Method 4 -> it covers all the testcases , also used to cover negative integers
+
+        public static int maxSubArraySum4(int[] nums) {
+            int maxSum = nums[0];
+            int currentSum = nums[0];
+            for (int i = 1; i < nums.length; i++) {
+                currentSum = Math.max(nums[i], currentSum + nums[i]);
+                maxSum = Math.max(maxSum, currentSum);
+            }
+            return maxSum;
+        }
 }

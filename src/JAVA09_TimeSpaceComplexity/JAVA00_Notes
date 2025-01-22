@@ -1,0 +1,19 @@
+Space Complexity -> Auxiliary Space + Input Space
+Auxiliary Space -> the space you take to solve the problem
+Input space -> the space you take to store the input
+
+Take an input of A and B
+C = A + B
+Auxiliary Space -> C -> extra variable (space) to take to solve the problem
+Input Space -> A and B are the input space
+So conclude space complexity is O(A+B+C) -> O(1+1+1) -> O(1) -> Constant
+
+if there is an array -> arr[n] -> the space complexity is O(n)
+never do anything to input -> because data should not be touched
+
+Recursive Functions ->
+
+no two functions at a same level will be in the stack at a same level
+they have to execute in order weather their level in recursive tree is same or not
+Only calls that are interlinked will be in the stack at he same time , the order should be same linear
+Space complexity  = height (Path) of the tree
