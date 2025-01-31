@@ -52,6 +52,3 @@ public class JAVA03_Typecasting {
 //
 //    }
 //}
-
-
-
