@@ -28,3 +28,13 @@ public class JAVA01_BubbleSort {
         }
     }
 }
+
+/*
+
+Key Takeaways -
+
+Larger elements move to the right (like bubbles rising).
+After each pass, the largest element is in its correct position.
+Optimized version stops early if no swaps are made.
+
+ */

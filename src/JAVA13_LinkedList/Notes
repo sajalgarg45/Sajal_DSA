@@ -1,0 +1,98 @@
+Items are not in contiguous allocation
+we cannot directly access the linked list nodes, because it doesn't know where it is ending
+no one has idea how many total elements are there ,
+each node know to values , the next node and its own value .
+
+1) SINGLY LINKED LIST
+
+Insertion (First) :
+
+let's say list is 3->8->5->2
+we have to add 14 in the start to make the LL - 14->3->8->5->2
+so now , Node.next = head , meaning 14 is pointing to the 3 i.e.head
+but head should be first element, so we change head to 14 by , Head = node
+if (tail==null) , tail = head , obviously 1 item is present in LL
+size++ , to check the length of the LL
+
+
+How to print it ->
+temp = head;
+move the temp till reaches the end, because we cannot move the head ,
+it will change the structure of LL
+
+Insertion (Last) :
+
+let's say list is 3->8->5->2
+we have to add 17 in the end, to make the LL 3->8->5->2->17
+tail.next = node, tail should be last so tail = node
+size++,
+if tail ==null , insert first value function will be called
+
+Insertion (Any Index) :
+
+let's say list is 3->8->5->2
+we have to insert 14 between 8 and 5, to look 3->8->14->5->2
+we took the node and rotate till the index where we have to add,
+here next would be the new node be created , we use temp to store the elements
+
+Deletion (First) :
+
+it means head should go to next node,
+just do head = head.next
+
+Deletion (Last) :
+
+we need to reach second last element, size-2, made it tail and next item will be null
+now how we reach it , iterate through it .
+
+Deletion (Any index) :
+
+lets say the LL is - 3->5->8->9
+we have to remove 8, firstly reach 5
+
+
+2) DOUBLY LINKED LIST :
+
+Insertion (First) :
+
+lets say we have the DL - null-8<->3<->2<->5-null
+we have to add 13 in the start to look the DL like - null-13<->8<->3<->2<->5-null
+so head should be gone to 13, so for 13 Node
+node.next = head , here 13 points to 8
+node.prev = null , here 13 prev is null
+head.prev = Node , here 8 prev is 13 , check for null pointer exception
+head = node , here 13 became the head
+
+Insertion (Last) :
+
+we have given head, so to iterate in the DL ,
+we check if node.next = null, if yes then it is tail, else iterate
+so to add the element in the last we have to do
+our DL is null-8<->3<->2<->5-null ,
+we hve to add 13 to look like null-8<->3<->2<->5<->13-null ,
+last.next = node , here 5 points 13
+node.prev = last , here 13 points to 5
+node.last = node
+
+Insertion (Any Index) :
+
+we have the DL - null-8<->3<->2<->5-null ,
+we have to add 13 after 2 to look like null-8<->3<->2<->13<->5-null ,
+here 2 is prev node ,
+node.next = p.next, here it means 13's next i.e. 5 is 2's next i.e. also 5
+p.next = node , here 2 points to 13
+node.prev = p , here 13 points to 2
+node.next.prev = node , it means 13.5.2 = 13 , so now 13 is successfully added in the DL
+now check the null pointer exception and the edge cases
+
+3) CIRCULAR LINKED LIST
+
+Node structure is same as singly linked list
+no null is there , head and tail is present simultaneously
+
+here we have the CL - 3->8->5->2 , here 5 is H and 8 is tail
+insert a value 13 after tail to look CL like 3->8->13->5->2
+tail.next = node , here tail.next i.e 13 refers as node
+node.next = head , here 13.next is 5 i.e. head
+tail = node , here the tail is node i.e. 13 is now tail
+if head == null , head = null and tail = null
