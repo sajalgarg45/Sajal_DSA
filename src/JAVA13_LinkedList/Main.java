@@ -42,12 +42,12 @@ public class Main {
 
          */
 
-        CL list = new CL();
-        list.insert(34);
-        list.insert(56);
-        list.insert(67);
-        list.insert(23);
-        list.display();
+//        CL list = new CL();
+//        list.insert(34);
+//        list.insert(56);
+//        list.insert(67);
+//        list.insert(23);
+//        list.display();
 
     }
 }

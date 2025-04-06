@@ -1,0 +1,39 @@
+STACKS :
+
+Algorithm - LIFO (Last In First Out) or FILO (First In Last Out)
+Push
+Pop
+Peek
+
+QUEUES :
+
+Algorithm - FIFO (First In First Out) or LILO (Last In Last Out)
+Insertion
+Removal
+
+In trees, we extensively use Stack and Queues
+
+DEQUE :
+
+Algorithm - we can insert/delete from start and last , both sides
+When we do trees , there it will be use
+
+
+CUSTOM STACK :
+
+We took a pointer , as we add the items in stack the pointer is acts as a index and increments
+to add the values inside the custom stack
+
+in dynamic stack , only thing we need to change is the push method
+we need to override it
+implementation
+
+data = [2,9,1,8,7]
+temp = [0,0,0,0,0,0,0,0,0,0]
+
+data copy to temp
+
+temp = [2,9,1,8,7,0,0,0,0,0]
+now data is pointing to temp , and temp is removed
+
+data = [2,9,1,8,7,0,0,0,0,0]
