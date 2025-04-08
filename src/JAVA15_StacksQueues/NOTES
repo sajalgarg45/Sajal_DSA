@@ -37,3 +37,32 @@ temp = [2,9,1,8,7,0,0,0,0,0]
 now data is pointing to temp , and temp is removed
 
 data = [2,9,1,8,7,0,0,0,0,0]
+
+
+QUEUE :
+Add from front and end
+remove form the front end
+
+CIRCULAR QUEUE :
+
+we have a circular queue
+empty queue -> [0,0,0,0,0]
+      index -> [0,1,2,3,4]
+front and end both are at 0th index
+
+insert at the end, like we inserted 8 , end goes to next index
+we added 9 , end goes to next position like,
+index -> [8,9,0,0,0]
+here end is at 2th index
+
+now we added 19,20,35 to look the queue -> [8,9,19,20,35]
+so now the front is at 0th index and end is at 4th index
+
+but now if we add another element , index 5th is not available , so we override the
+0th index and add the value there and out front goes to the next index ,
+and end goes to the first index
+so now out queue is like [47,9,19,20,35]
+so end = 0th index i.e 47
+front = 1st index i.e 9
+
+we use modulo operator to get to the first index after the queue is full and override the element

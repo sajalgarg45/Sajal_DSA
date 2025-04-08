@@ -1,0 +1,8 @@
+Where to use stack and queues -
+where you want the value in order , where i want to store the elements here and there
+in a sequence , so the flow continues , working in order , sequence , flow - these are used
+
+1) IMPLEMENT QUEUE USING STACKS :
+
+Queue - FIFO
+we have two stack F1 and F2 , where we take F1 as main and F2 as helper
