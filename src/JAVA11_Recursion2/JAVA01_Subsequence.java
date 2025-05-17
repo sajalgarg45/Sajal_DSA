@@ -5,8 +5,6 @@ Used for permutation and combination
 Ex - [3,5,9] - [3],[3,5],[3,9],[3,5,9],[5,9],[5],[9]
 This pattern of taking some elements and removing some is known as subset pattern
 Two Choices - Take it or ignore it
-
-
 */
 
 public class JAVA01_Subsequence {

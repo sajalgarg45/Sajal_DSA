@@ -12,7 +12,7 @@ public class LL {
 
     // INSERTION (FIRST)
     public void insertionFirst(int val){
-        Node node = new Node(val);
+        Node node = new Node(val); // creates new node for the linked list
         node.next = head;
         head = node;
         if(tail==null){
@@ -140,11 +140,11 @@ public class LL {
         private int value;
         private Node next;
 
-        public Node(int value) {
+        public Node(int value) { // if next is not provided
             this.value = value;
         }
 
-        public Node(int value, Node next) {
+        public Node(int value, Node next) { // it next is provided
             this.value = value;
             this.next = next;
         }

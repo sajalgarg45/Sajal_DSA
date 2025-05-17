@@ -1,0 +1,113 @@
+Binary Trees -
+
+Each node has 0,1,2 Child Nodes
+it is pointing to two points .
+
+in linked list it is point to one
+
+Here the Node structure is like this -
+Node :
+    int value;
+    Node left;
+    Node right;
+
+Properties -
+Size = Total number of Nodes
+Child-Parent = if two nodes have same parent then they both are siblings to each other
+Edge = two nodes connecting to each other - Count: For n nodes, there are n - 1 edges.
+Height = Max Number of edges between two nodes - from that node to the leaf Nodes
+leaf = a node that has no children
+level = subtract height of root - height of node
+
+Types of Binary tree -
+
+1) Complete Binary tree -
+ALl level full
+last full from left to right
+       1
+      / \
+     2   3
+    / \  /
+   4  5 6
+Valid Complete Binary Tree
+Not allowed: Gaps in the last level (e.g., node 6 can't appear without 4 and 5 being filled first)
+
+2) Full Binary Tree / Strict Binary tree -
+each node has either 0 children or 2 children , No single child
+       1
+      / \
+     2   3
+    / \ / \
+   4  5 6  7
+
+Note -
+This below tree is both Complete Binary tree and Full Binary Tree
+       1
+      / \
+     2   3
+    / \
+   4  5
+
+3) Perfect Binary tree -
+all the internal nodes have 2 children and all the leaf nodes have the same level
+        1
+      /   \
+     2     3
+    / \   / \
+   4   5 6   7
+Every internal node (1, 2, 3) has exactly two children
+All leaves (4, 5, 6, 7) are at level 2 (Same Level)
+
+4) Height Balanced Binary tree - O(Log)n
+| height(left subtree) - height(right subtree) | ≤ 1
+       1
+      / \
+     2   3
+    / \
+   4   5
+Height of left subtree of 1 = 2 (from 1 → 2 → 4/5)
+Height of right subtree of 1 = 1 (from 1 → 3)
+|2 - 1| = 1 → balanced
+
+5) Skewed Binary Tree - Every node has only a left child
+       1
+      /
+     2
+    /
+   3
+
+6) Ordered Binary Tree
+Every Node has some Property
+Ex - Binary Search Tree - left should be smaller , right should be bigger
+       8
+      / \
+     4   10
+    / \    \
+   2   6    20
+
+
+PROPERTIES -
+
+1) In Perfect Binary Tree , Height = h
+Total Number of Nodes = 2^(h+1) - 1
+
+2) Leaf Nodes in Perfect Binary Tree  = 2^h
+
+3) n = no.of leaves
+Log (N+1) levels at least
+
+4) Strict Binary Tree
+N -> Leaf Nodes
+internal Nodes = N-1
+
+
+IMPLEMENTATION -
+
+1) Linked -> using Linked list -> where the values can be less more and null
+using pointers
+2) Sequential -> Using Array -> where strict or complete trees present and no value is missing
+
+for insert {
+    insert(left)
+    insert(right)
+}

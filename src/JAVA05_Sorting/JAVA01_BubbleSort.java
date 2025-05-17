@@ -1,11 +1,14 @@
 package JAVA05_Sorting;
 import java.util.Arrays;
+
 public class JAVA01_BubbleSort {
+
     public static void main(String[] args) {
         int[] arr = {1,3,2,5,4,6};
         bubble(arr);
         System.out.println(Arrays.toString(arr));
     }
+
     static void bubble(int [] arr){
         // there is an issue in it , it is also checking for the values which is sorted
         // to avoid the unnecessary iterations we use boolean
@@ -22,19 +25,14 @@ public class JAVA01_BubbleSort {
                 }
             }
             // if you did not wap for particular i it means arrays is sorted
-            if(!swapped){ // swapped == flase
+            if(!swapped){ // swapped == false
                 break;
             }
+            /*
+            here the pass refers to each iteration i offers
+            if for any i no swap happen then swap = false -> break
+             */
         }
     }
+
 }
-
-/*
-
-Key Takeaways -
-
-Larger elements move to the right (like bubbles rising).
-After each pass, the largest element is in its correct position.
-Optimized version stops early if no swaps are made.
-
- */

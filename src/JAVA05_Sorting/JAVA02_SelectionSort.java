@@ -11,7 +11,7 @@ public class JAVA02_SelectionSort {
     static void selectionSort(int[] arr){
         for (int i=0;i<arr.length;i++){
             // find the max element and push it to the end of the array
-            int last = arr.length-i-1;
+            int last = arr.length-i-1; // here last refers to the index of the last element
             int maxIndex = getMaxIndex(arr,0,last);
             swapArray(arr,maxIndex,last);
         }
@@ -26,6 +26,11 @@ public class JAVA02_SelectionSort {
         return max;
     }
     static void swapArray(int[] arr , int first , int second){
+        /*
+        here we are swapping the last index which we get from last variable
+        and getMaxIndex , where we get the max element index ,
+        so we can swap the last index element to the max index element to sort the list
+         */
         int temp = arr[first];
         arr[first] = arr[second];
         arr[second] = temp;
