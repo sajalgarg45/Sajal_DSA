@@ -8,8 +8,8 @@ Peek
 QUEUES :
 
 Algorithm - FIFO (First In First Out) or LILO (Last In Last Out)
-Insertion
-Removal
+Insertion - Enqueue
+Removal   - Dequeue
 
 In trees, we extensively use Stack and Queues
 
@@ -22,7 +22,8 @@ When we do trees , there it will be use
 CUSTOM STACK :
 
 We took a pointer , as we add the items in stack the pointer is acts as a index and increments
-to add the values inside the custom stack
+to add the values inside the custom stack , it act as the index for
+last item to be added or remove
 
 in dynamic stack , only thing we need to change is the push method
 we need to override it

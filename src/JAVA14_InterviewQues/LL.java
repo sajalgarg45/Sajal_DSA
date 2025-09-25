@@ -24,7 +24,6 @@ public class LL {
         }
     }
 
-
     // INSERTION (FIRST)
     public void insertionFirst(int val){
         Node node = new Node(val);

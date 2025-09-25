@@ -7,11 +7,11 @@ public class CustomStack {
 
     int ptr = -1;
 
-    public CustomStack(){
+    public CustomStack(){ // took the default size
         this(DEFAULT_SIZE);
     }
 
-    public CustomStack(int size){
+    public CustomStack(int size){ // took the custom size
         this.data = new int[size];
     }
 
@@ -20,8 +20,7 @@ public class CustomStack {
             System.out.println("Stack is full");
             return false;
         }
-        ptr++;
-        data[ptr] = item;
+        data[ptr++] = item;
         return true;
     }
 
@@ -40,7 +39,7 @@ public class CustomStack {
         if(isEmpty()){
             throw new Exception("Cannot peek from an empty stack!");
         }
-        return data [ptr];
+        return data[ptr];
     }
 
     public boolean isFull(){
