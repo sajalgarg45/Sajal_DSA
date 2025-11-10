@@ -22,7 +22,7 @@ level = subtract height of root - height of node
 Types of Binary tree -
 
 1) Complete Binary tree -
-ALl level full
+All level full
 last full from left to right
        1
       / \

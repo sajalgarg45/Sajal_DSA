@@ -34,3 +34,77 @@ Post-Order (Left → Right → Root):
 4 5 2 6 3 1
 USE -
 Delete a Tree (Bottom-Up)
+
+
+AVL TREES -
+
+For Balanced tree - H(Left sub tree) - H(Right Sub tree) <=1
+
+        1
+       / \
+      2   3
+     / \
+    4   5    --> 2-1 = 1 -> Balanced Tree
+
+
+For Unbalanced Tree - H(Left sub tree) - H(Right Sub tree) > 1
+
+        1
+       / \
+      2   3
+     /
+    4
+   /
+  5      --> 3-1 = 2 -> Unbalanced Tree
+
+
+Solution - Self Balancing Trees
+
+Example - AVL Trees ( Adelson-Velsky and Landis tree )
+
+What Is a Rotation?
+
+A rotation is an operation that re-structures part of the tree while keeping
+the in-order traversal (sorted order) the same.
+
+There are two basic rotations:
+1) Right Rotation (clockwise)
+2) Left Rotation (anti-clockwise)
+
+Two combined (double) rotations:
+1) Left-Right Rotation
+2) Right-Left Rotation
+
+Balance Factor (BF) = height(left subtree) − height(right subtree)
+
+* Right Rotation - Used when the tree is Left-Heavy (BF > 1)
+
+Before rotation:
+
+     30   -> Node 30 has BF = +2 (unbalanced)
+    /
+   20
+  /
+ 10
+
+After right rotation (around 30):
+
+    20
+   /  \
+ 10   30
+
+ * Left Rotation - Used when the tree is Right-Heavy (BF < -1)
+
+ Before Rotation:
+
+ 10
+   \
+    20
+      \
+       30
+
+After Rotation:
+
+    20
+   /  \
+  10   30

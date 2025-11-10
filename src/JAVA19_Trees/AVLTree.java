@@ -1,8 +1,8 @@
 package JAVA19_Trees;
 
-public class BinarySearchTree {
+public class AVLTree {
 
-    public class Node {
+    public static class Node {
         public int value; // Made public
         public int height;
         public Node left;
@@ -11,7 +11,6 @@ public class BinarySearchTree {
         public Node(int value) {
             this.value = value;
         }
-
         public int getValue(){
             return value;
         }
@@ -19,7 +18,7 @@ public class BinarySearchTree {
 
     private Node root;
 
-    public BinarySearchTree() {
+    public AVLTree() {
     }
 
     public int height(Node node) {
@@ -44,20 +43,77 @@ public class BinarySearchTree {
 
         if (value < node.value) {
             node.left = insert(value, node.left);
-        } else if (value > node.value) {
+        }
+
+        if (value > node.value) {
             node.right = insert(value, node.right);
         }
 
-        // ✅ Fix height calculation
         node.height = Math.max(height(node.left), height(node.right)) + 1;
+        return rotate(node);
+    }
+
+    private Node rotate(Node node){
+        if( height(node.left) - height(node.right)>1){
+            // left heavy
+            if(height(node.left.left) - height(node.right.right) > 0 ){
+                // left left case
+                return rightRotate(node);
+            }
+            if(height(node.left.left) - height(node.right.right) < 0 ){
+                // left right case
+                node.left = leftRotate(node.left);
+                return rightRotate(node);
+            }
+        }
+
+        if( height(node.left) - height(node.right) < -1){
+            // right heavy
+            if(height(node.right.left) - height(node.right.right) < 0 ){
+                // right right case
+                return leftRotate(node);
+            }
+            if(height(node.right.left) - height(node.right.right) > 0 ){
+                // left right case
+                node.right = rightRotate(node.right);
+                return leftRotate(node);
+            }
+        }
+
         return node;
     }
 
+    public Node rightRotate(Node p){
+        Node c = p.left;
+        Node t= c.right;
+
+        c.right = p;
+        p.left = t;
+
+        p.height = Math.max(height(p.left),height(p.right) + 1);
+        c.height = Math.max(height(c.left),height(c.right) + 1);
+
+        return c;
+    }
+    public Node leftRotate(Node c){
+        Node p = c.right;
+        Node t = p.left;
+
+        p.left = c;
+        c.right = t;
+
+        p.height = Math.max(height(p.left),height(p.right) + 1);
+        c.height = Math.max(height(c.left),height(c.right) + 1);
+
+        return p;
+    }
+
     public void populate(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            this.insert(nums[i]);
+        for (int num : nums) {
+            this.insert(num);
         }
     }
+
     private void populatedSorted(int[] nums, int start, int end){
         if(start>=end){
             return;
@@ -96,10 +152,10 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        int[] nums = {5, 2, 7, 1, 4, 6, 9, 8, 3, 10};
-        tree.populate(nums);
-        tree.display();
-        System.out.println("Is Tree Balanced? " + tree.balanced());
+        AVLTree tree = new AVLTree();
+        for (int i = 0; i < 1000; i++) {
+            tree.insert(i);
+        }
+        System.out.println(tree.height(tree.root));
     }
 }
