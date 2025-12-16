@@ -12,7 +12,7 @@ public class BinarySearchTree {
             this.value = value;
         }
 
-        public int getValue(){
+        public int getValue() {
             return value;
         }
     }
@@ -58,14 +58,15 @@ public class BinarySearchTree {
             this.insert(nums[i]);
         }
     }
-    private void populatedSorted(int[] nums, int start, int end){
-        if(start>=end){
+
+    private void populatedSorted(int[] nums, int start, int end) {
+        if (start >= end) {
             return;
         }
-        int mid = (start+end)/2;
+        int mid = (start + end) / 2;
         this.insert(nums[mid]);
-        populatedSorted(nums,start,mid);
-        populatedSorted(nums,mid+1,end);
+        populatedSorted(nums, start, mid);
+        populatedSorted(nums, mid + 1, end);
     }
 
     public boolean balanced() {
